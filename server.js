@@ -1,6 +1,5 @@
 const Discord = require("discord.js")
 const client = new Discord.Client();
-const snekfetch = require("snekfetch");
 const fs = require("fs");
 const ms = require("ms");
 const moment = require("moment");
