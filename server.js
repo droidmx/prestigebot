@@ -36,7 +36,7 @@ client.channels.get('461161101699317760').send(`Welcome to Prestige, ${member}, 
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: `in the Court of Oryx`, type: 0 }});
+  client.user.setPresence({ game: { name: `with !Prestigous ❤`, type: 0 }});
 });
 
 client.on('message', async msg => { // START MESSAGE HANDLER
