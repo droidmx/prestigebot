@@ -31,12 +31,12 @@ music.start(client, { //start music bot
 
 client.on('guildMemberAdd', member => {
 //actual welcome channel, id: 413023284293271552
-client.channels.get('461161101699317760').send(`Welcome to Prestige, ${member}, you are now the *prestigious* member # ${member.guild.memberCount}! <a:partyblob:411974992004120587><a:partyblob:411974992004120587>`)
+client.channels.get('461161101699317760').send(`Welcome to Prestige, ${member}, you are now the newest, *prestigious* member! | <a:partyblob:411974992004120587><a:partyblob:411974992004120587>Updated Member Count: ${member.guild.memberCount}! <a:partyblob:411974992004120587><a:partyblob:411974992004120587>`)
 })
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setPresence({ game: { name: `with !Prestigous ❤`, type: 0 }});
+  client.user.setPresence({ game: { name: `with !Prestige ❤`, type: 0 }});
 });
 
 client.on('message', async msg => { // START MESSAGE HANDLER
@@ -324,7 +324,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
     bot = "No";
   }
   const embed = new Discord.RichEmbed()
-    .setColor(randomColor)
+    .setColor(0x000000)
     .setThumbnail(`${member.user.displayAvatarURL()}`)
     .setAuthor(`${member.user.tag} (${member.id})`, `${member.user.avatarURL()}`)
     .addField("Nickname:", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "No nickname"}`, true)
@@ -345,7 +345,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   let sicon = msg.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription("Server Information")
-    .setColor("#15f153")
+    .setColor(0x000000)
     .setThumbnail(sicon)
     .addField("Server Name", msg.guild.name)
     .addField("Created On", msg.guild.createdAt)
