@@ -31,7 +31,7 @@ music.start(client, { //start music bot
 
 client.on('guildMemberAdd', member => {
 //actual welcome channel, id: 413023284293271552
-client.channels.get('461161101699317760').send(`Welcome to Prestige, ${member}, you are now the newest, *prestigious* member! | <a:partyblob:411974992004120587><a:partyblob:411974992004120587>Updated Member Count: ${member.guild.memberCount}! <a:partyblob:411974992004120587><a:partyblob:411974992004120587>`)
+client.channels.get('461161101699317760').send(`Welcome to **!Prestige ❤**, ${member}, you are now **prestigious** | <a:partyblob:411974992004120587><a:partyblob:411974992004120587>Updated Member Count: ${member.guild.memberCount}! <a:partyblob:411974992004120587><a:partyblob:411974992004120587>`)
 })
 
 client.on('ready', () => {
