@@ -31,7 +31,7 @@ music.start(client, { //start music bot
 
 client.on('guildMemberAdd', member => {
 //actual welcome channel, id: 413023284293271552
-client.channels.get('461161101699317760').send(`Welcome to **!Prestige ❤**, ${member}, you are now **prestigious** | <a:partyblob:411974992004120587><a:partyblob:411974992004120587>Updated Member Count: ${member.guild.memberCount}! <a:partyblob:411974992004120587><a:partyblob:411974992004120587>`)
+client.channels.get('461161101699317760').send(`Welcome to **!Prestige ❤**, ${member}, you are now *prestigious.*`)
 })
 
 client.on('ready', () => {
@@ -317,7 +317,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   if (msg.content.toLowerCase().startsWith('-userinfo')) {
   const member = msg.mentions.members.first() || msg.guild.members.get(args[0]) || msg.member;
   if (!member) return msg.reply("Please provide a vaild Mention or USER ID");
-  let bot;
+  var bot;
   if (member.user.bot === true) {
     bot = "Yes";
   } else {
@@ -325,7 +325,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   }
   const embed = new Discord.RichEmbed()
     .setColor(0x000000)
-    .setThumbnail(`${member.user.displayAvatarURL()}`)
+    .setThumbnail(`${member.user.avatarURL()}`)
     .setAuthor(`${member.user.tag} (${member.id})`, `${member.user.avatarURL()}`)
     .addField("Nickname:", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "No nickname"}`, true)
     .addField("Bot?", `${bot}`, true)
