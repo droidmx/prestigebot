@@ -15,23 +15,31 @@ const status = {
 
 const music = require('discord.js-musicbot-addon');
 
-music.start(client, { //start music bot
+
+music.start(client, {
   youtubeKey: "AIzaSyAAKSiOkapv22Kt3OWNOAWeTcXJ0yLmJ90",
   prefix: "-",
+  leaveAlt: ["fuckoff", "getout"],
   helpCmd: "mhelp",
   thumbnailType: "high",
-  maxQueueSize: "10",
+  maxQueueSize: 5,
   enableQueueStat: true,
-  anyoneCanAdjust: true,
-  anyoneCanLeave: true,
   ownerOverMember: true,
   clearOnLeave: true,
+  anyoneCanSkip: true,
+  anyoneCanPause: true,
+  logging: true,
+  requesterName: true,
+  embedColor: "RANDOM",
+  checkQueues: true,
+  pauseAlt: ['stop', 'wait'],
   botOwner: "368756694114893825"
-}); //end music bot
+});
+
 
 client.on('guildMemberAdd', member => {
 //actual welcome channel, id: 413023284293271552
-client.channels.get('461161101699317760').send(`Welcome to **!Prestige ❤**, ${member}, you are now *prestigious.*`)
+client.channels.get('413023284293271552').send(`Welcome to **!Prestige ❤**, ${member}, you are now *prestigious.*`)
 })
 
 client.on('ready', () => {
