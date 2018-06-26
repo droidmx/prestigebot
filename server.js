@@ -315,7 +315,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   
   
   if (msg.content.toLowerCase().startsWith('-userinfo')) {
-  const member = msg.mentions.members.first() || msg.guild.members.get(args[0]) || msg.member;
+  const member = msg.mentions.members.first() || msg.guild.members.get(args[0])
   if (!member) return msg.reply("Please provide a vaild Mention or USER ID");
   var bot;
   if (member.user.bot === true) {
