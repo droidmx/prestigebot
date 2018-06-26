@@ -352,7 +352,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
     .addField("You Joined", msg.member.joinedAt)
     .addField("Total Members", msg.guild.memberCount);
 
-message.channel.send(serverembed);
+msg.channel.send(serverembed);
   
   }
   if (msg.content.startsWith('-ping')) {
