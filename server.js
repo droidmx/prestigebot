@@ -326,7 +326,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   const embed = new Discord.RichEmbed()
     .setColor(0x000000)
     .setThumbnail(`${member.user.avatarURL}`)
-    .setAuthor(`${member.user.tag} (${member.user.id})`, `${member.avatarURL}`)
+    .setAuthor(`${member.user.tag}`, `${member.user.avatarURL}`)
     .addField("Nickname:", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "No nickname"}`, true)
     .addField("Bot?", `${bot}`, true)
     .addField("Guild", `${bot}`, true)
