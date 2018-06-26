@@ -323,7 +323,7 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   } else {
     bot = "No";
   }
-  const embed = new Discord.MessageEmbed()
+  const embed = new Discord.RichEmbed()
     .setColor(randomColor)
     .setThumbnail(`${member.user.displayAvatarURL()}`)
     .setAuthor(`${member.user.tag} (${member.id})`, `${member.user.avatarURL()}`)
@@ -335,22 +335,22 @@ client.on('message', async msg => { // START MESSAGE HANDLER
     .addField("Roles", `${member.roles.filter(r => r.id !== msg.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "No Roles"}`, true)
     .addField("Joined At", `${moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
 .addField("Created At", `${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true);
-  msg.channel.send({
+  msg.channel.send(
     embed
-});
+);
   
   }
   
   if (msg.content.toLowerCase().startsWith('-serverinfo')) {
-  let sicon = message.guild.iconURL;
+  let sicon = msg.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription("Server Information")
     .setColor("#15f153")
     .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined", message.member.joinedAt)
-    .addField("Total Members", message.guild.memberCount);
+    .addField("Server Name", msg.guild.name)
+    .addField("Created On", msg.guild.createdAt)
+    .addField("You Joined", msg.member.joinedAt)
+    .addField("Total Members", msg.guild.memberCount);
 
 message.channel.send(serverembed);
   
