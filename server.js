@@ -325,16 +325,16 @@ client.on('message', async msg => { // START MESSAGE HANDLER
   }
   const embed = new Discord.RichEmbed()
     .setColor(0x000000)
-    .setThumbnail(`${member.user.avatarURL()}`)
-    .setAuthor(`${member.user.tag} (${member.id})`, `${member.user.avatarURL()}`)
+    .setThumbnail(`${member.avatarURL()}`)
+    .setAuthor(`${member.tag} (${member.id})`, `${member.avatarURL()}`)
     .addField("Nickname:", `${member.nickname !== null ? `Nickname: ${member.nickname}` : "No nickname"}`, true)
     .addField("Bot?", `${bot}`, true)
     .addField("Guild", `${bot}`, true)
-    .addField("Status", `${status[member.user.presence.status]}`, true)
-    .addField("Playing", `${member.user.presence.game ? `${member.user.presence.game.name}` : "not playing anything."}`, true)
+    .addField("Status", `${status[member.presence.status]}`, true)
+    .addField("Playing", `${member.presence.game ? `${member.presence.game.name}` : "not playing anything."}`, true)
     .addField("Roles", `${member.roles.filter(r => r.id !== msg.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "No Roles"}`, true)
     .addField("Joined At", `${moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-.addField("Created At", `${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true);
+.addField("Created At", `${moment.utc(member.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true);
   msg.channel.send(
     embed
 );
